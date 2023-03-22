@@ -35,8 +35,6 @@ def search(query, k=10):
     # It then returns the top_k highest ranked images, which we output
     hits = util.semantic_search(query_emb, emb_matrix, top_k=k)[0]
     
-    print("Query:")
-    display(query)
     for hit in hits:
         elList = img_names[hit['corpus_id']].split('/')
         url = 'http://www.ccl.kuleuven.be/varia/hackathon/main/thumbnails/' + elList[8]
